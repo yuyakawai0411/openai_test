@@ -7,5 +7,3 @@ COPY requirements.txt /myapp/
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . /myapp
-
-CMD [ "python", "./script.py" ]
