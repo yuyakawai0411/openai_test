@@ -1,10 +1,11 @@
 from dotenv import dotenv_values
 from openai import OpenAI
+
 client = OpenAI(
   api_key=dotenv_values(".env").get("OPENAI_API_KEY")
 )
 
-prompt = "自己紹介をしてください。"
+prompt = input()
 
 completion = client.chat.completions.create(
   model="gpt-3.5-turbo",

@@ -2,6 +2,9 @@ version: "3.9"
 services:
   web:
     build: .
-    command: python script.py
+    stdin_open: true # コンテナの標準入力を開いた状態にする
+    # フォアグラウンドで動くプロセスがないため、コンテナの立ち上げ状態を維持するためtty: trueを指定する
+    # CLIの操作を可能にする
+    tty: true
     volumes:
       - .:/myapp
